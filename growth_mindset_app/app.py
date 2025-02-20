@@ -201,9 +201,20 @@ st.markdown("""
 
     /* Form Submit Button Special Style */
     .stButton > button[kind="primaryFormSubmit"] {
-        background: linear-gradient(135deg, #3B82F6, ##6D28D9) !important;
-        margin-top: 1rem !important;
-    }
+        background: linear-gradient(135deg, #6D28D9, #9333EA) !important;
+                color: white !important;
+                border: none !important;
+                padding: 0.75rem 1.5rem !important;
+                border-radius: 12px !important;
+                font-weight: 600 !important;
+                font-size: 1rem !important;
+                letter-spacing: 0.5px !important;
+                text-transform: uppercase !important;
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+                box-shadow: 0 4px 15px rgba(109, 40, 217, 0.3) !important;
+                position: relative !important;
+                overflow: hidden !important;
+     }
 
     /* Modern Card Design */
     .modern-card {
@@ -364,6 +375,163 @@ st.markdown("""
         border: none;
         border-top: 1px solid #6D28D9 !important; /* Purple border */
         margin: 0.5rem 0;
+    }
+
+    /* More Specific Log Session Button Style */
+    button[kind="primaryFormSubmit"],
+    div.stButton > button[kind="primaryFormSubmit"],
+    form[data-testid="stForm"] div.stButton > button,
+    div.stButton > button[data-testid="FormSubmitButton"] {
+        background: linear-gradient(135deg, #FF3366, #FF6B98) !important;
+        color: white !important;
+        border: none !important;
+        padding: 1rem 2rem !important;
+        border-radius: 16px !important;
+        font-weight: 600 !important;
+        font-size: 1.2rem !important;
+        letter-spacing: 0.5px !important;
+        text-transform: uppercase !important;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        position: relative !important;
+        overflow: hidden !important;
+        box-shadow: 0 4px 15px rgba(255, 51, 102, 0.3),
+                    0 0 0 2px rgba(255, 51, 102, 0.2) !important;
+    }
+
+    /* More Specific Add Goal Button Style */
+    form div.stButton > button:not([kind="primaryFormSubmit"]):not([data-testid="FormSubmitButton"]) {
+        background: #6D28D9 !important;
+        color: white !important;
+        border: none !important;
+        padding: 1rem 2rem !important;
+        border-radius: 16px !important;
+        font-weight: 600 !important;
+        font-size: 1.2rem !important;
+        letter-spacing: 0.5px !important;
+        box-shadow: 0 4px 15px rgba(109, 40, 217, 0.3) !important;
+        transition: all 0.3s ease !important;
+        width: 100% !important;
+    }
+
+    /* Hover States */
+    button[kind="primaryFormSubmit"]:hover,
+    div.stButton > button[kind="primaryFormSubmit"]:hover,
+    form[data-testid="stForm"] div.stButton > button:hover,
+    div.stButton > button[data-testid="FormSubmitButton"]:hover {
+        transform: translateY(-3px) !important;
+        box-shadow: 0 8px 25px rgba(255, 51, 102, 0.5),
+                    0 0 0 3px rgba(255, 51, 102, 0.3) !important;
+        background: linear-gradient(135deg, #FF4D7F, #FF85AD) !important;
+    }
+
+    form div.stButton > button:not([kind="primaryFormSubmit"]):not([data-testid="FormSubmitButton"]):hover {
+        background: #7C3AED !important;
+        transform: translateY(-2px) !important;
+        box-shadow: 0 6px 20px rgba(109, 40, 217, 0.4) !important;
+    }
+
+    /* Active States */
+    button[kind="primaryFormSubmit"]:active,
+    div.stButton > button[kind="primaryFormSubmit"]:active,
+    form[data-testid="stForm"] div.stButton > button:active,
+    div.stButton > button[data-testid="FormSubmitButton"]:active,
+    form div.stButton > button:not([kind="primaryFormSubmit"]):not([data-testid="FormSubmitButton"]):active {
+        transform: translateY(-1px) !important;
+        transition: transform 0.1s !important;
+    }
+
+    /* Glitter Animation */
+    @keyframes glitterBorder {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+
+    /* Add Goal Button - Multiple specific selectors */
+    div.stButton > button,
+    .stButton > button,
+    button[type="button"],
+    form div.stButton > button,
+    div[data-testid="stForm"] div.stButton > button {
+        background: #6D28D9 !important;
+        color: white !important;
+        border: none !important;
+        padding: 1rem 2rem !important;
+        border-radius: 16px !important;
+        font-weight: 600 !important;
+        font-size: 1.2rem !important;
+        letter-spacing: 0.5px !important;
+        box-shadow: 0 4px 15px rgba(109, 40, 217, 0.3) !important;
+        transition: all 0.3s ease !important;
+        width: 100% !important;
+        text-transform: uppercase !important;
+    }
+
+    /* Log Session Button - Override for specific buttons */
+    button[kind="primaryFormSubmit"],
+    div.stButton > button[kind="primaryFormSubmit"],
+    form[data-testid="stForm"] div.stButton > button[data-testid="FormSubmitButton"],
+    div.stButton > button[data-testid="FormSubmitButton"] {
+        background: linear-gradient(135deg, #FF3366, #FF6B98) !important;
+        color: white !important;
+        border: none !important;
+        padding: 1rem 2rem !important;
+        border-radius: 16px !important;
+        font-weight: 600 !important;
+        font-size: 1.2rem !important;
+        letter-spacing: 0.5px !important;
+        text-transform: uppercase !important;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        position: relative !important;
+        overflow: hidden !important;
+        box-shadow: 0 4px 15px rgba(255, 51, 102, 0.3),
+                    0 0 0 2px rgba(255, 51, 102, 0.2) !important;
+    }
+
+    /* Hover States */
+    div.stButton > button:hover,
+    .stButton > button:hover,
+    button[type="button"]:hover,
+    form div.stButton > button:hover {
+        background: #7C3AED !important;
+        transform: translateY(-2px) !important;
+        box-shadow: 0 6px 20px rgba(109, 40, 217, 0.4) !important;
+    }
+
+    /* Log Session Button Hover - Override */
+    button[kind="primaryFormSubmit"]:hover,
+    div.stButton > button[kind="primaryFormSubmit"]:hover,
+    form[data-testid="stForm"] div.stButton > button[data-testid="FormSubmitButton"]:hover,
+    div.stButton > button[data-testid="FormSubmitButton"]:hover {
+        transform: translateY(-3px) !important;
+        box-shadow: 0 8px 25px rgba(255, 51, 102, 0.5),
+                    0 0 0 3px rgba(255, 51, 102, 0.3) !important;
+        background: linear-gradient(135deg, #FF4D7F, #FF85AD) !important;
+    }
+
+    /* Active States */
+    div.stButton > button:active,
+    .stButton > button:active,
+    button[type="button"]:active,
+    form div.stButton > button:active {
+        transform: translateY(-1px) !important;
+        transition: transform 0.1s !important;
+    }
+
+    /* Complete and Delete Button Overrides */
+    .stButton > button[key^="goal_"],
+    .stButton > button[key^="delete_"] {
+        width: auto !important;
+        padding: 0.5rem 1.5rem !important;
+        font-size: 1rem !important;
+    }
+
+    .stButton > button[key^="goal_"] {
+        background: linear-gradient(135deg, #059669, #10B981) !important;
+    }
+
+    .stButton > button[key^="delete_"] {
+        background: linear-gradient(135deg, #DC2626, #EF4444) !important;
     }
     </style>
 """, unsafe_allow_html=True)
