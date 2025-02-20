@@ -134,7 +134,7 @@ st.markdown("""
     /* Enhanced Sidebar */
     section[data-testid="stSidebar"] {
         background-color: var(--bg-secondary);
-        border-right: 1px solid rgba(255,255,255,0.1);
+        border-right: 4px solid #6D28D9;
     }
     
     section[data-testid="stSidebar"] .stRadio label {
@@ -162,20 +162,169 @@ st.markdown("""
 
     /* Button Enhancement */
     .stButton > button {
-        background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
-        color: white;
-        border: none;
-        padding: 0.75rem 1.5rem;
-        border-radius: 10px;
-        font-weight: 600;
-        font-size: 1.1rem !important;
-        transition: all 0.3s ease;
-        box-shadow: 0 4px 15px rgba(109, 40, 217, 0.2);
+        width: 100% !important;
+        background: linear-gradient(135deg, #6D28D9, #aa1bfc) !important;
+        color: white !important;
+        border: none !important;
+        padding: 1rem 2rem !important;
+        border-radius: 16px !important;
+        font-weight: 600 !important;
+        font-size: 1.2rem !important;
+        letter-spacing: 0.5px !important;
+        text-transform: uppercase !important;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        box-shadow: 0 4px 15px rgba(109, 40, 217, 0.3) !important;
+        position: relative !important;
+        overflow: hidden !important;
+    }
+
+    .stButton > button::before {
+        content: '' !important;
+        position: absolute !important;
+        top: 0 !important;
+        left: -100% !important;
+        width: 100% !important;
+        height: 100% !important;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent) !important;
+        transition: 0.5s !important;
     }
 
     .stButton > button:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(109, 40, 217, 0.4);
+        transform: translateY(-3px) !important;
+        box-shadow: 0 8px 25px rgba(109, 40, 217, 0.5) !important;
+        background: linear-gradient(135deg, #7C3AED, #9333EA) !important;
+    }
+
+    .stButton > button:hover::before {
+        left: 100% !important;
+    }
+
+    /* Form Submit Button Special Style */
+    .stButton > button[kind="primaryFormSubmit"] {
+        background: linear-gradient(135deg, #3B82F6, ##6D28D9) !important;
+        margin-top: 1rem !important;
+    }
+
+    /* Modern Card Design */
+    .modern-card {
+        background: rgba(255, 255, 255, 0.03) !important;
+        backdrop-filter: blur(10px) !important;
+        border-radius: 24px !important;
+        padding: 2rem !important;
+        border: 4px solid #6D28D9 !important;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1) !important;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        position: relative !important;
+        overflow: hidden !important;
+    }
+
+    .modern-card::before {
+        content: '' !important;
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        border-radius: 24px !important;
+        padding: 2px !important;
+        background: linear-gradient(135deg, #6D28D9, #9333EA) !important;
+        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0) !important;
+        -webkit-mask-composite: xor !important;
+        mask-composite: exclude !important;
+        opacity: 0 !important;
+        transition: opacity 0.3s ease !important;
+    }
+
+    .modern-card:hover {
+        transform: translateY(-5px) !important;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2) !important;
+    }
+
+    .modern-card:hover::before {
+        opacity: 1 !important;
+    }
+
+    /* Session Form Enhancement */
+    form[data-testid="stForm"] {
+        background: rgba(255, 255, 255, 0.03) !important;
+        padding: 2rem !important;
+        border-radius: 24px !important;
+        border: 1px solid rgba(255, 255, 255, 0.1) !important;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1) !important;
+        backdrop-filter: blur(10px) !important;
+    }
+
+    /* Input Field Enhancement */
+
+            .stDateInput ,  
+            .stTextInput ,.stNumberInput {
+    background: transparent !important; /* Transparent background */
+    border: 1px solid #6D28D9 !important; /* Purple border */
+    border-radius: 12px !important;
+    padding: 0.75rem !important;
+    color: var(--text-primary) !important; /* Light text color */
+    transition: all 0.3s ease !important;
+}
+
+.stTextInput:focus-within,
+.stNumberInput:focus-within,
+.stDateInput:focus-within {
+    border-color: #9333EA !important; /* Slightly lighter purple on focus */
+    box-shadow: 0 0 0 2px rgba(147, 51, 234, 0.2) !important; /* Glow effect */
+    transform: translateY(-1px) !important;
+}
+
+    /* Goal Card Enhancement */
+    .goal-card {
+        background: rgba(255, 255, 255, 0.03) !important;
+        border-radius: 20px !important;
+        padding: 1.5rem !important;
+        margin: 1rem 0 !important;
+         border: 1px solid #6D28D9 !important; /* Purple border */
+       
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1) !important;
+        transition: all 0.3s ease !important;
+        position: relative !important;
+        overflow: hidden !important;
+    }
+
+    .goal-card:hover {
+        transform: translateY(-3px) !important;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2) !important;
+    }
+
+    /* Complete Button Special Style */
+    .stButton > button[key^="goal_"] {
+        background: linear-gradient(135deg, #059669, #10B981) !important;
+        font-size: 1rem !important;
+        padding: 0.5rem 1.5rem !important;
+        text-transform: none !important;
+    }
+
+    /* Delete Button Special Style */
+    .stButton > button[key^="delete_"] {
+        background: linear-gradient(135deg, #DC2626, #EF4444) !important;
+        font-size: 1rem !important;
+        padding: 0.5rem 1.5rem !important;
+        text-transform: none !important;
+    }
+
+    /* Session Container Enhancement */
+    .session-container {
+        background: rgba(255, 255, 255, 0.03) !important;
+        backdrop-filter: blur(10px) !important;
+        border-radius: 20px !important;
+        padding: 1.5rem !important;
+        margin: 1rem 0 !important;
+        border: 1px solid #6D28D9 !important; /* Purple border */
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1) !important;
+        transition: all 0.3s ease !important;
+    }
+
+    .session-container:hover {
+        transform: translateY(-3px) !important;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2) !important;
+         border: 1px solid #6D28D9 !important; /* Purple border */
     }
 
     /* Progress Bar Enhancement */
@@ -183,6 +332,7 @@ st.markdown("""
         background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
         height: 8px !important;
         border-radius: 4px;
+         border: 1px solid #6D28D9 !important; /* Purple border */
     }
 
     /* Delete Button Styling */
@@ -212,7 +362,7 @@ st.markdown("""
     /* Horizontal Line Styling */
     hr {
         border: none;
-        border-top: 1px solid rgba(255,255,255,0.1);
+        border-top: 1px solid #6D28D9 !important; /* Purple border */
         margin: 0.5rem 0;
     }
     </style>
@@ -367,6 +517,39 @@ def goals():
     with st.form("new_goal"):
         goal = st.text_input("New Goal")
         deadline = st.date_input("Deadline")
+          
+        # Custom CSS for the "Add Goal" button
+        st.markdown("""
+            <style>
+            .stButton > button[key^="Add Goal_"] {
+                background: linear-gradient(135deg, #6D28D9, #9333EA) !important;
+                color: white !important;
+                border: none !important;
+                padding: 0.75rem 1.5rem !important;
+                border-radius: 12px !important;
+                font-weight: 600 !important;
+                font-size: 1rem !important;
+                letter-spacing: 0.5px !important;
+                text-transform: uppercase !important;
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+                box-shadow: 0 4px 15px rgba(109, 40, 217, 0.3) !important;
+                position: relative !important;
+                overflow: hidden !important;
+            }
+
+            .stButton > button:hover {
+                transform: translateY(-2px) !important;
+                box-shadow: 0 6px 20px rgba(109, 40, 217, 0.5) !important;
+                background: linear-gradient(135deg, #7C3AED, #9333EA) !important;
+            }
+
+            .stButton > button:active {
+                transform: translateY(0) !important;
+                box-shadow: 0 4px 15px rgba(109, 40, 217, 0.3) !important;
+            }
+            </style>
+        """, unsafe_allow_html=True)
+
         if st.form_submit_button("Add Goal"):
             data['goals'].append({
                 'goal': goal,
